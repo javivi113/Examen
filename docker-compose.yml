@@ -1,0 +1,27 @@
+version: '3.9'
+services:
+  proxy:
+    container_name: proxyExamen
+    image: nginx
+    ports:
+      - 80:80
+    volumes:
+      - .\nginx\default.conf:/etc/nginx/conf.d/default.conf
+  web:
+    build: 
+      context: .
+      dockerfile: DockerfileWeb
+    image: nodeapp
+    environment:
+      - API=http://localhost:4000
+  api1:
+    build: 
+      context: .
+      dockerfile: DockerfileApi1
+    image: nodeapi
+  api2:
+    build: 
+      context: .
+      dockerfile: DockerfileApi2
+    image: nodeapi
+  
