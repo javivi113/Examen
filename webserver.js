@@ -3,14 +3,14 @@ const os = require("os");
 
 const ifaceIP = '0.0.0.0'; // Specifies the IP address we want to listen to
 const port = process.argv[2] || 3000;
-const api = process.env.API
+const api = process.env.API || 'http://localhost:4000'
 
 const server = http.createServer((req, res) => {
 
     var host = server.address().address;
     var port = server.address().port;
     var hostname = os.hostname();
-    var time = new Date();
+    var time =  new Date();
     time = time.getHours() + ':' + time.getMinutes() + ':' + time.getSeconds() + ' ' + time.getMilliseconds()
 
     var html = `

@@ -13,15 +13,15 @@ services:
       dockerfile: DockerfileWeb
     image: nodeapp
     environment:
-      - API=http://localhost:4000
+      - API=http://10.10.17.119/api
   api1:
     build: 
       context: .
       dockerfile: DockerfileApi1
-    image: nodeapi
+    image: nodeapi1
   api2:
     build: 
       context: .
       dockerfile: DockerfileApi2
-    image: nodeapi
+    image: nodeapi2
   

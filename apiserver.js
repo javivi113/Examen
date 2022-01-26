@@ -2,7 +2,7 @@ const http = require('http');
 const os = require('os');
 //const path = require('path');
 
-const port = process.argv[2] || 4000 || 6000;
+const port = process.argv[2] || 4000;
 const hostname = os.hostname();
 
 const server = http.createServer((req, res) => {
